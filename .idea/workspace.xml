@@ -1,21 +1,144 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="5912e390-aad4-4fe5-827c-92c2c9916415" name="Changes" comment="" />
+    <list default="true" id="5912e390-aad4-4fe5-827c-92c2c9916415" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/pharmacy/src/Layout/AdminLayout.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pharmacy/src/Layout/DoctorLayout.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pharmacy/src/Layout/LoginLayout.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pharmacy/src/Layout/UserLayout.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pharmacy/src/access/accessEnum.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pharmacy/src/access/checkAccess.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pharmacy/src/access/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pharmacy/src/components/GlobalHeader.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pharmacy/src/router/routes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pharmacy/src/store/user.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pharmacy/src/views/admin/AdminViewDoctorView.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pharmacy/src/views/admin/AdminViewPharmacyView.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pharmacy/src/views/doctor/DoctorAppointedPatientsView.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pharmacy/src/views/doctor/DoctorViewMedicalRecordView.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pharmacy/src/views/doctor/DoctorViewPharmacyView.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pharmacy/src/views/login/AdminLoginView.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pharmacy/src/views/login/DoctorLoginView.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pharmacy/src/views/login/UserLoginView.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pharmacy/src/views/login/UserRegisterView.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pharmacy/src/views/user/UserMedicationRecordView.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pharmacy/src/views/user/UserRegistrationView.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pharmacy/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pharmacy/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy/.eslintrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pharmacy/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy/babel.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pharmacy/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pharmacy/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pharmacy/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pharmacy/src/components/HelloWorld.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pharmacy/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pharmacy/src/router/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy/src/router/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pharmacy/src/store/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy/src/store/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pharmacy/src/views/AboutView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pharmacy/src/views/HomeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy/src/views/HomeView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pharmacy/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy/vue.config.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "git-widget-placeholder": "main",
-    "prettierjs.PrettierConfiguration.Package": "D:\\Project\\SE_Pharmacy\\pharmacy\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "D:\\Project\\SE_Pharmacy\\pharmacy\\node_modules\\typescript\\lib"
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2WqJ3WbD4z4fXN3iGUK4fYcLa8b" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;FrontEnd&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Project/OJ&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;D:\\Project\\SE_Pharmacy\\pharmacy\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Project\\SE_Pharmacy\\pharmacy\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Project\SE_Pharmacy\pharmacy\src\views" />
+      <recent name="D:\Project\SE_Pharmacy\pharmacy\src\views\login" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="serve" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/pharmacy/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="serve" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.serve" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5912e390-aad4-4fe5-827c-92c2c9916415" name="Changes" comment="" />
+      <created>1697453982806</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1697453982806</updated>
+      <workItem from="1697453988251" duration="483000" />
+      <workItem from="1697454501847" duration="359000" />
+      <workItem from="1697454887427" duration="5097000" />
+      <workItem from="1697609009713" duration="4275000" />
+      <workItem from="1697629802199" duration="5990000" />
+    </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

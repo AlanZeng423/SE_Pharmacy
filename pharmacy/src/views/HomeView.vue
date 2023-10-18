@@ -1,18 +1,28 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
-  </div>
+  欢迎来到本医院<br />
+  请选择：<br />
+  <div @click="goUserLogin">用户</div>
+  <div @click="goDoctorLogin">医生</div>
+  <div @click="goAdminLogin">管理员</div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+<style>
+#clo {
+  color: #333;
+}
+</style>
+<script setup lang="ts">
+import { useRoute, useRouter } from "vue-router";
 
-export default defineComponent({
-  name: "HomeView",
-  components: {
-    HelloWorld,
-  },
-});
+const route = useRoute();
+const router = useRouter();
+const goUserLogin = () => {
+  router.push({ path: "/login/user" });
+};
+const goDoctorLogin = () => {
+  router.push({ path: "/login/doctor" });
+};
+const goAdminLogin = () => {
+  router.push({ path: "/login/admin" });
+};
 </script>

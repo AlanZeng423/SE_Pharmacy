@@ -1,0 +1,79 @@
+<template>
+  <a-row id="globalHeader" class="grid-demo" align="center" :wrap="false">
+    <a-col flex="auto">
+      <a-menu
+        mode="horizontal"
+        :selected-keys="selectedKeys"
+        @menu-item-click="doMenuClick"
+        style="text-align: left"
+      >
+        <a-menu-item
+          key="0"
+          :style="{ padding: 0, marginRight: '38px' }"
+          disabled
+        >
+          <div class="title-bar">
+            <img
+              class="logo"
+              src="https://avatars.githubusercontent.com/u/128474470?v=4"
+            />
+          </div>
+        </a-menu-item>
+        <a-menu-item v-for="item in routes" :key="item.path"
+          >{{ item.name }}
+        </a-menu-item>
+      </a-menu>
+    </a-col>
+    <a-col flex="60px">
+      <div class="title-bar">{{ store.state.user?.loginUser?.userName }}</div>
+    </a-col>
+  </a-row>
+</template>
+<script setup lang="ts">
+import { routes } from "@/router/routes";
+import { useRoute, useRouter } from "vue-router";
+import { computed, ref, onMounted } from "vue";
+import { useStore } from "vuex";
+
+const route = useRoute();
+const router = useRouter();
+const store = useStore();
+const doMenuClick = (key: string) => {
+  // eslint-disable-next-line no-undef
+  router.push({
+    path: key,
+  });
+};
+
+// 更新路由后同步更新菜单栏
+const selectedKeys = ref([route.path]);
+router.afterEach((to, from, failure) => {
+  selectedKeys.value = [to.path];
+});
+
+//测试状态更新,经测试OK
+setTimeout(() => {
+  store.dispatch("user/getLoginUser", {
+    userName: "殷洪洋",
+  });
+}, 3000);
+</script>
+<style scoped>
+.title-bar {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 48px;
+}
+
+.userImage {
+  height: 36px;
+}
+
+.title {
+  color: #444;
+  margin-left: 16px;
+}
+</style>
