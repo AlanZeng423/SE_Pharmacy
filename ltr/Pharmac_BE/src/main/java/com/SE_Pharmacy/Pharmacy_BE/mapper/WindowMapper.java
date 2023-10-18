@@ -24,3 +24,7 @@ public interface WindowMapper {
     @Update("UPDATE se_window SET bill_id = #{billId}, storehouse_id = #{storehouseId} WHERE wid = #{wid}")
     void updateWindow(Window window);
 }
+
+
+
+
