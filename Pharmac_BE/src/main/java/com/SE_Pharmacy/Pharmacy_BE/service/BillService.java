@@ -12,11 +12,11 @@ public interface BillService {
 
     void addBill(Bill bill);
 
-    void deleteBill(int billId);
+    void deleteBill(long billId);
 
-    List<Bill> getReservedPatients(int doctorId);
+    List<Bill> getReservedPatients(String storeId);
 
-    Bill getBillById(int billId);
+    Bill getBillById(long billId);
 
     void updateBill(Bill bill);
 }

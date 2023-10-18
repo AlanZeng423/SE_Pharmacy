@@ -14,13 +14,13 @@ public interface BillMapper {
     void addBill(Bill bill);
 
     @Delete("DELETE FROM bill WHERE bill_id = #{billId}")
-    void deleteBill(int billId);
+    void deleteBill(long billId);
 
     @Select("SELECT * FROM bill WHERE storehouse_id = #{storehouseId}")
-    List<Bill> getReservedPatients(int doctorId);
+    List<Bill> getReservedPatients(String storehouseId);
 
     @Select("SELECT * FROM bill WHERE bill_id = #{billId}")
-    Bill getBillById(int billId);
+    Bill getBillById(long billId);
 
     @Update("UPDATE bill SET user_id = #{userId}, storehouse_id = #{storehouseId}, " +
             "order_date = #{orderDate}, paid_date = #{paidDate}, isPaid = #{isPaid} " +
