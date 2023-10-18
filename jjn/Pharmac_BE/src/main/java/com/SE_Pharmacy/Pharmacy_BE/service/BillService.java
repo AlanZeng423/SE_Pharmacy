@@ -14,7 +14,7 @@ public interface BillService {
 
     void deleteBill(long billId);
 
-    List<Bill> getReservedPatients(String storehouseId);
+    List<Bill> getReservedPatients(String storeId);
 
     Bill getBillById(long billId);
 

@@ -31,12 +31,12 @@ public class BillServiceImpl implements BillService {
     }
 
     @Override
-    public List<Bill> getReservedPatients(String storehouseId) {
-        return billMapper.getReservedPatients(storehouseId);
+    public List<Bill> getReservedPatients(String doctorId) {
+        return billMapper.getReservedPatients(doctorId);
     }
 
     @Override
-    public Bill getBillById(int billId) {
+    public Bill getBillById(long billId) {
         return billMapper.getBillById(billId);
     }
 
