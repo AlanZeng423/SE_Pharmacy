@@ -27,19 +27,19 @@ public class BillController {
     }
 
     @DeleteMapping("/delete/{billId}")
-    public ResponseEntity<Void> deleteBill(@PathVariable int billId) {
+    public ResponseEntity<Void> deleteBill(@PathVariable long billId) {
         billService.deleteBill(billId);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @GetMapping("/reserved-patients/{doctorId}")
-    public ResponseEntity<List<Bill>> getReservedPatients(@PathVariable int doctorId) {
-        List<Bill> reservedPatients = billService.getReservedPatients(doctorId);
+    @GetMapping("/reserved-patients/{storeId}")
+    public ResponseEntity<List<Bill>> getReservedPatients(@PathVariable String storeId) {
+        List<Bill> reservedPatients = billService.getReservedPatients(storeId);
         return new ResponseEntity<>(reservedPatients, HttpStatus.OK);
     }
 
     @GetMapping("/{billId}")
-    public ResponseEntity<Bill> getBillById(@PathVariable int billId) {
+    public ResponseEntity<Bill> getBillById(@PathVariable long billId) {
         Bill bill = billService.getBillById(billId);
         return new ResponseEntity<>(bill, HttpStatus.OK);
     }

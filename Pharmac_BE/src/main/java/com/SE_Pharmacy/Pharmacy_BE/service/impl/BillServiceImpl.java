@@ -26,17 +26,17 @@ public class BillServiceImpl implements BillService {
     }
 
     @Override
-    public void deleteBill(int billId) {
+    public void deleteBill(long billId) {
         billMapper.deleteBill(billId);
     }
 
     @Override
-    public List<Bill> getReservedPatients(int doctorId) {
+    public List<Bill> getReservedPatients(String doctorId) {
         return billMapper.getReservedPatients(doctorId);
     }
 
     @Override
-    public Bill getBillById(int billId) {
+    public Bill getBillById(long billId) {
         return billMapper.getBillById(billId);
     }
 
