@@ -4,21 +4,26 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import com.SE_Pharmacy.Pharmacy_BE.po.Bill;
 import org.apache.ibatis.annotations.*;
+
+
 @Mapper
 public interface BillMapper {
-    // 添加挂号记录
-    void insertBill(@Param("bill") Bill bill);
 
-    //获取某个病人的所有订单
-    List<Bill> getBillsByUserId(@Param("userId") String userId);
+    @Insert("INSERT INTO bill (user_id, storehouse_id, order_date, paid_date, isPaid) " +
+            "VALUES (#{userId}, #{storehouseId}, #{orderDate}, #{paidDate}, #{isPaid})")
+    void addBill(Bill bill);
 
-    // 获取某个billid的订单
-    Bill getBillById(@Param("billId") Long billId);
+    @Delete("DELETE FROM bill WHERE bill_id = #{billId}")
+    void deleteBill(int billId);
 
-    // 更新订单的支付状态
-    void updatePaymentStatus(@Param("billId") Long billId, @Param("isPaid") Boolean isPaid);
+    @Select("SELECT * FROM bill WHERE storehouse_id = #{storehouseId}")
+    List<Bill> getReservedPatients(int doctorId);
 
-    // 删除挂号记录
-    void deleteBill(@Param("billId") long billId);
+    @Select("SELECT * FROM bill WHERE bill_id = #{billId}")
+    Bill getBillById(int billId);
 
+    @Update("UPDATE bill SET user_id = #{userId}, storehouse_id = #{storehouseId}, " +
+            "order_date = #{orderDate}, paid_date = #{paidDate}, isPaid = #{isPaid} " +
+            "WHERE bill_id = #{billId}")
+    void updateBill(Bill bill);
 }

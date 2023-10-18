@@ -1,45 +1,54 @@
 package com.SE_Pharmacy.Pharmacy_BE.controller;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.*;
+
 import com.SE_Pharmacy.Pharmacy_BE.po.Bill;
 import com.SE_Pharmacy.Pharmacy_BE.service.BillService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @RestController
-@RequestMapping("/bill")
+@RequestMapping("/bills")
 public class BillController {
+
+    private final BillService billService;
+
     @Autowired
-    private BillService billService;
+    public BillController(BillService billService) {
+        this.billService = billService;
+    }
 
-    // 添加挂号记录
     @PostMapping("/add")
-    public void addBill(@RequestBody Bill bill) {
+    public ResponseEntity<Void> addBill(@RequestBody Bill bill) {
         billService.addBill(bill);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    // 删除挂号记录
     @DeleteMapping("/delete/{billId}")
-    public void deleteBill(@PathVariable int billId) {
+    public ResponseEntity<Void> deleteBill(@PathVariable int billId) {
         billService.deleteBill(billId);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    // 获取已预约患者列表
     @GetMapping("/reserved-patients/{doctorId}")
-    public List<Bill> getReservedPatients(@PathVariable int doctorId) {
-        return billService.getReservedPatients(doctorId);
+    public ResponseEntity<List<Bill>> getReservedPatients(@PathVariable int doctorId) {
+        List<Bill> reservedPatients = billService.getReservedPatients(doctorId);
+        return new ResponseEntity<>(reservedPatients, HttpStatus.OK);
     }
 
-    // 获取患者的挂号记录
-    @GetMapping("/{patientId}")
-    public Bill getBillByPatientId(@PathVariable int patientId) {
-        return billService.getBillByPatientId(patientId);
+    @GetMapping("/{billId}")
+    public ResponseEntity<Bill> getBillById(@PathVariable int billId) {
+        Bill bill = billService.getBillById(billId);
+        return new ResponseEntity<>(bill, HttpStatus.OK);
     }
 
-    // 更新挂号记录
     @PutMapping("/update")
-    public void updateBill(@RequestBody Bill bill) {
+    public ResponseEntity<Void> updateBill(@RequestBody Bill bill) {
         billService.updateBill(bill);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }
+
+

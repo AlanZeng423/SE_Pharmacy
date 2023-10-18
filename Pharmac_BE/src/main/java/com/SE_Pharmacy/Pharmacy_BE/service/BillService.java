@@ -6,14 +6,23 @@ import java.util.List;
 import com.SE_Pharmacy.Pharmacy_BE.po.Bill;
 
 
+import java.util.List;
+
 public interface BillService {
-    public void insertBill(Bill bill);
 
-    public List<Bill> getBillsByUserId(String userId);
+    void addBill(Bill bill);
 
-    public Bill getBillById( Long billId);
+    void deleteBill(int billId);
 
-    public void updatePaymentStatus( Long billId,  Boolean isPaid);
+    List<Bill> getReservedPatients(int doctorId);
 
-    public void deleteBill(long billId);
+    Bill getBillById(int billId);
+
+    void updateBill(Bill bill);
 }
+
+
+
+
+
+

@@ -1,4 +1,5 @@
 package com.SE_Pharmacy.Pharmacy_BE.service.impl;
+import com.SE_Pharmacy.Pharmacy_BE.mapper.DrugMapper;
 import org.springframework.stereotype.Service;
 import com.SE_Pharmacy.Pharmacy_BE.po.Drug;
 import com.SE_Pharmacy.Pharmacy_BE.service.DrugService;
@@ -6,10 +7,30 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
 @Service
-public class DrugServiceImpl implements DrugService{
+public class DrugServiceImpl implements DrugService {
+
+    private final DrugMapper drugMapper;
+
     @Autowired
-    private DrugMapper drugMapper;
+    public DrugServiceImpl(DrugMapper drugMapper) {
+        this.drugMapper = drugMapper;
+    }
+
+    @Override
+    public void addDrug(Drug drug) {
+        drugMapper.addDrug(drug);
+    }
+
+    @Override
+    public void deleteDrug(String id) {
+        drugMapper.deleteDrug(id);
+    }
 
     @Override
     public List<Drug> getAllDrugs() {
@@ -17,21 +38,12 @@ public class DrugServiceImpl implements DrugService{
     }
 
     @Override
-    public Drug getDrugById(int drugId) {
-        return drugMapper.getDrugById(drugId);
+    public Drug getDrugById(String id) {
+        return drugMapper.getDrugById(id);
     }
 
-    @Override
-    public void addDrug(Drug drug) {
-        drugMapper.addDrug(drug);
-    }
     @Override
     public void updateDrug(Drug drug) {
         drugMapper.updateDrug(drug);
-    }
-
-    @Override
-    public void deleteDrug(String drugId) {
-        drugMapper.deleteDrug(drugId);
     }
 }

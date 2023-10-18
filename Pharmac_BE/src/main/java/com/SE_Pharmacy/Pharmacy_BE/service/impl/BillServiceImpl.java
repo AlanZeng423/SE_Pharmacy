@@ -1,38 +1,48 @@
 package com.SE_Pharmacy.Pharmacy_BE.service.impl;
-import org.apache.ibatis.annotations.Param;
+import com.SE_Pharmacy.Pharmacy_BE.mapper.BillMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.SE_Pharmacy.Pharmacy_BE.mapper.AdministratorMapper;
 import com.SE_Pharmacy.Pharmacy_BE.po.Bill;
 import com.SE_Pharmacy.Pharmacy_BE.service.BillService;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
 @Service
-public class BillServiceImpl implements BillService{
+public class BillServiceImpl implements BillService {
+
+    private final BillMapper billMapper;
+
     @Autowired
-    private BillMapper billMapper;
-
-    @Override
-    public void insertBill(Bill bill) {
-        billMapper.insertBill(bill);
+    public BillServiceImpl(BillMapper billMapper) {
+        this.billMapper = billMapper;
     }
 
     @Override
-    public List<Bill> getBillsByUserId(String userId) {
-        return billMapper.getBillsByUserId(userId);
+    public void addBill(Bill bill) {
+        billMapper.addBill(bill);
     }
 
     @Override
-    public Bill getBillById(Long billId) {
+    public void deleteBill(int billId) {
+        billMapper.deleteBill(billId);
+    }
+
+    @Override
+    public List<Bill> getReservedPatients(int doctorId) {
+        return billMapper.getReservedPatients(doctorId);
+    }
+
+    @Override
+    public Bill getBillById(int billId) {
         return billMapper.getBillById(billId);
     }
 
     @Override
-    public void updatePaymentStatus(Long billId, Boolean isPaid) {
-        billMapper.updatePaymentStatus(billId, isPaid);
-    }
-
-    @Override
-    public void deleteBill(long billId) {
-        billMapper.deleteBill(billId);
+    public void updateBill(Bill bill) {
+        billMapper.updateBill(bill);
     }
 }
+

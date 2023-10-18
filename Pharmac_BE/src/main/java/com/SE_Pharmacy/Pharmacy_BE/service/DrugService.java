@@ -3,14 +3,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import com.SE_Pharmacy.Pharmacy_BE.po.Drug;
+import java.util.List;
+
 public interface DrugService {
-    public List<Drug> getAllDrugs();
 
-    public Drug getDrugById(int drugId);
+    void addDrug(Drug drug);
 
-    public void addDrug(Drug drug);
+    void deleteDrug(String id);
 
-    public void updateDrug(Drug drug);
+    List<Drug> getAllDrugs();
 
-    public void deleteDrug(String drugId);
+    Drug getDrugById(String id);
+
+    void updateDrug(Drug drug);
 }

@@ -1,5 +1,7 @@
 package com.SE_Pharmacy.Pharmacy_BE.controller;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.*;
@@ -10,36 +12,41 @@ import java.util.List;
 @RestController
 @RequestMapping("/drugs")
 public class DrugController {
+
+    private final DrugService drugService;
+
     @Autowired
-    private DrugService drugService;
-
-    // 获取所有药品列表
-    @GetMapping("/all")
-    public List<Drug> getAllDrugs() {
-        return drugService.getAllDrugs();
+    public DrugController(DrugService drugService) {
+        this.drugService = drugService;
     }
 
-    // 获取特定药品信息
-    @GetMapping("/{drugId}")
-    public Drug getDrugById(@PathVariable int drugId) {
-        return drugService.getDrugById(drugId);
-    }
-
-    // 添加新药品
     @PostMapping("/add")
-    public void addDrug(@RequestBody Drug drug) {
+    public ResponseEntity<Void> addDrug(@RequestBody Drug drug) {
         drugService.addDrug(drug);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    // 更新药品信息
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Void> deleteDrug(@PathVariable String id) {
+        drugService.deleteDrug(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<Drug>> getAllDrugs() {
+        List<Drug> drugs = drugService.getAllDrugs();
+        return new ResponseEntity<>(drugs, HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Drug> getDrugById(@PathVariable String id) {
+        Drug drug = drugService.getDrugById(id);
+        return new ResponseEntity<>(drug, HttpStatus.OK);
+    }
+
     @PutMapping("/update")
-    public void updateDrug(@RequestBody Drug drug) {
+    public ResponseEntity<Void> updateDrug(@RequestBody Drug drug) {
         drugService.updateDrug(drug);
-    }
-
-    // 删除药品
-    @DeleteMapping("/delete/{drugId}")
-    public void deleteDrug(@PathVariable int drugId) {
-        drugService.deleteDrug(drugId);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }
