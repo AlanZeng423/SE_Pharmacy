@@ -6,6 +6,7 @@
         :selected-keys="selectedKeys"
         @menu-item-click="doMenuClick"
         style="text-align: left"
+        default-expanded-keys
       >
         <a-menu-item
           key="0"
@@ -13,13 +14,10 @@
           disabled
         >
           <div class="title-bar">
-            <img
-              class="logo"
-              src="https://avatars.githubusercontent.com/u/128474470?v=4"
-            />
+            <img class="logo" src="../assets/LOGO_Header.jpg" />
           </div>
         </a-menu-item>
-        <a-menu-item v-for="item in routes" :key="item.path"
+        <a-menu-item v-for="item in route.matched[0].children" :key="item.path"
           >{{ item.name }}
         </a-menu-item>
       </a-menu>
@@ -38,6 +36,7 @@ import { useStore } from "vuex";
 const route = useRoute();
 const router = useRouter();
 const store = useStore();
+//获取子路由
 const doMenuClick = (key: string) => {
   // eslint-disable-next-line no-undef
   router.push({

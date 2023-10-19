@@ -12,7 +12,7 @@
     <template v-if="route.path.startsWith('/login')">
       <router-view />
     </template>
-    <template v-else>
+    <template v-if="route.path == '/'">
       <LoginLayout />
     </template>
   </div>
@@ -21,9 +21,6 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 import { useRoute } from "vue-router";
-import UserLayout from "@/Layout/UserLayout.vue";
-import DoctorLayout from "@/Layout/DoctorLayout.vue";
-import AdminLayout from "@/Layout/AdminLayout.vue";
 import LoginLayout from "@/Layout/LoginLayout.vue";
 
 const route = useRoute();
