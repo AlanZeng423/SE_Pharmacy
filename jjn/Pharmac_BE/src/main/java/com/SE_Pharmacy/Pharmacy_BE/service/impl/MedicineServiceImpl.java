@@ -1,27 +1,45 @@
 package com.SE_Pharmacy.Pharmacy_BE.service.impl;
-import com.SE_Pharmacy.Pharmacy_BE.mapper.DrugMapper;
+
 import com.SE_Pharmacy.Pharmacy_BE.mapper.MedicineMapper;
-import org.springframework.stereotype.Service;
 import com.SE_Pharmacy.Pharmacy_BE.po.Medicine;
-import com.SE_Pharmacy.Pharmacy_BE.service.MedecineSercie;
+import com.SE_Pharmacy.Pharmacy_BE.service.MedicineService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.List;
-public class MedecineServiceImpl implements MedecineSercie{
-    private final MedecineMa drugMapper;
-    @Override
-    public List<Medicine> getAllMedcne() {
-        return ;
+
+@Service
+public class MedicineServiceImpl implements MedicineService {
+
+    private final MedicineMapper medicineMapper;
+
+    @Autowired
+    public MedicineServiceImpl(MedicineMapper medicineMapper) {
+        this.medicineMapper = medicineMapper;
     }
 
     @Override
-    public Medicine getMedcineBystorehouse_id(String storehouse_id) {
-        return null;
+    public void addMedicine(Medicine medicine) {
+        medicineMapper.addMedicine(medicine);
     }
 
     @Override
-    public List<Medicine> findExpiredMedicines(Date currentDate) {
-        return null;
+    public void deleteMedicine(String id) {
+        medicineMapper.deleteMedicine(id);
+    }
+
+    @Override
+    public List<Medicine> getMedicinesByStorehouse(String storehouseId) {
+        return medicineMapper.getMedicinesByStorehouse(storehouseId);
+    }
+
+    @Override
+    public Medicine getMedicineById(String id) {
+        return medicineMapper.getMedicineById(id);
+    }
+
+    @Override
+    public void updateMedicine(Medicine medicine) {
+        medicineMapper.updateMedicine(medicine);
     }
 }
