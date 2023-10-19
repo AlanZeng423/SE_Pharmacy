@@ -17,7 +17,7 @@
             <img class="logo" src="../assets/LOGO_Header.jpg" />
           </div>
         </a-menu-item>
-        <a-menu-item v-for="item in route.matched[0].children" :key="item.path"
+        <a-menu-item v-for="item in visibleRoutes" :key="item.path"
           >{{ item.name }}
         </a-menu-item>
       </a-menu>
@@ -32,11 +32,26 @@ import { routes } from "@/router/routes";
 import { useRoute, useRouter } from "vue-router";
 import { computed, ref, onMounted } from "vue";
 import { useStore } from "vuex";
+import AccessEnum from "@/access/accessEnum";
+import checkAccess from "@/access/checkAccess";
 
 const route = useRoute();
 const router = useRouter();
 const store = useStore();
-//获取子路由
+const visibleRoutes = computed(() => {
+  return route.matched[0].children.filter((item, idex) => {
+    if (item.meta?.hideInMenu) {
+      return false;
+    }
+    if (
+      !checkAccess(store.state.user.loginUser, item?.meta?.access as string)
+    ) {
+      return false;
+    }
+    return true;
+  });
+});
+
 const doMenuClick = (key: string) => {
   // eslint-disable-next-line no-undef
   router.push({
@@ -54,6 +69,7 @@ router.afterEach((to, from, failure) => {
 setTimeout(() => {
   store.dispatch("user/getLoginUser", {
     userName: "殷洪洋",
+    userRole: AccessEnum.USER,
   });
 }, 3000);
 </script>

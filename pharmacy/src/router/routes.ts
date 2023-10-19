@@ -15,6 +15,7 @@ import DoctorViewMedicalRecordView from "@/views/doctor/DoctorViewMedicalRecordV
 import AdminViewDoctorView from "@/views/admin/AdminViewDoctorView.vue";
 import AdminViewPharmacyView from "@/views/admin/AdminViewPharmacyView.vue";
 import DoctorViewPharmacyView from "@/views/doctor/DoctorViewPharmacyView.vue";
+import AccessEnum from "@/access/accessEnum";
 
 export const routes: Array<RouteRecordRaw> = [
   {
@@ -56,11 +57,17 @@ export const routes: Array<RouteRecordRaw> = [
         path: "/user/medicalRecord",
         name: "病历管理(对应每次看病)",
         component: UserMedicationRecordView,
+        meta: {
+          hideInMenu: true,
+        },
       },
       {
         path: "/user/registration",
         name: "用户挂号预约",
         component: UserRegistrationView,
+        meta: {
+          access: AccessEnum.USER,
+        },
       },
     ],
     meta: {
@@ -76,6 +83,9 @@ export const routes: Array<RouteRecordRaw> = [
         path: "/doctor/AppointedPatients",
         name: "预约病人",
         component: DoctorAppointedPatientsView,
+        meta: {
+          access: AccessEnum.DOCTOR,
+        },
       },
       {
         path: "/doctor/ViewMedicalRecord",
