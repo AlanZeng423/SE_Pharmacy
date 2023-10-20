@@ -3,7 +3,7 @@
     <a-layout style="min-height: 100vh">
       <a-layout-header class="header">
         <a-space>
-          <div>yhyOJ</div>
+          <div>1</div>
         </a-space>
       </a-layout-header>
       <a-layout-content class="content">

@@ -58,16 +58,14 @@ export const routes: Array<RouteRecordRaw> = [
         name: "病历管理(对应每次看病)",
         component: UserMedicationRecordView,
         meta: {
-          hideInMenu: true,
+          hideInMenu: false,
         },
       },
       {
         path: "/user/registration",
         name: "用户挂号预约",
         component: UserRegistrationView,
-        meta: {
-          access: AccessEnum.USER,
-        },
+        meta: {},
       },
     ],
     meta: {
@@ -83,9 +81,7 @@ export const routes: Array<RouteRecordRaw> = [
         path: "/doctor/AppointedPatients",
         name: "预约病人",
         component: DoctorAppointedPatientsView,
-        meta: {
-          access: AccessEnum.DOCTOR,
-        },
+        meta: {},
       },
       {
         path: "/doctor/ViewMedicalRecord",
