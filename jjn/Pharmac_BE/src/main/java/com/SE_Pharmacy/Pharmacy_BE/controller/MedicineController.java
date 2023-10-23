@@ -32,9 +32,9 @@ public class MedicineController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @GetMapping("/storehouse/{storehouseId}")
-    public ResponseEntity<List<Medicine>> getMedicinesByStorehouse(@PathVariable String storehouseId) {
-        List<Medicine> medicines = medicineService.getMedicinesByStorehouse(storehouseId);
+    @GetMapping()
+    public ResponseEntity<List<Medicine>> getMedicines() {
+        List<Medicine> medicines = medicineService.getMedicines();
         return new ResponseEntity<>(medicines, HttpStatus.OK);
     }
 

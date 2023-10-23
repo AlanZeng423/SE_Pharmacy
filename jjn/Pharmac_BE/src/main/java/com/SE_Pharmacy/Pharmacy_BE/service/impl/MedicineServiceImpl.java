@@ -29,8 +29,8 @@ public class MedicineServiceImpl implements MedicineService {
     }
 
     @Override
-    public List<Medicine> getMedicinesByStorehouse(String storehouseId) {
-        return medicineMapper.getMedicinesByStorehouse(storehouseId);
+    public List<Medicine> getMedicines() {
+        return medicineMapper.getMedicines();
     }
 
     @Override

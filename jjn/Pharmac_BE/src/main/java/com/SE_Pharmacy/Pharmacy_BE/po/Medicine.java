@@ -13,9 +13,6 @@ public class Medicine {
     @Column(name = "effective_date")
     private Date effectiveDate;
 
-    @Column(name = "storehouse_id", length = 100)
-    private String storehouseId;
-
     @Column(name = "stock")
     private Integer stock;
 
@@ -35,20 +32,7 @@ public class Medicine {
         this.effectiveDate = effectiveDate;
     }
 
-    public String getStorehouseId() {
-        return storehouseId;
-    }
 
-    public void setStorehouseId(String storehouseId) {
-        this.storehouseId = storehouseId;
-    }
 
-    public Integer getStock() {
-        return stock;
-    }
-
-    public void setStock(Integer stock) {
-        this.stock = stock;
-    }
 }
 

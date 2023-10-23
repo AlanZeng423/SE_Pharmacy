@@ -16,7 +16,7 @@ public interface MedicineMapper {
     void deleteMedicine(String id);
 
     @Select("SELECT * FROM medicine WHERE storehouse_id = #{storehouseId}")
-    List<Medicine> getMedicinesByStorehouse(String storehouseId);
+    List<Medicine> getMedicines();
 
     @Select("SELECT * FROM medicine WHERE id = #{id}")
     Medicine getMedicineById(String id);

@@ -10,7 +10,7 @@ public interface MedicineService {
 
     void deleteMedicine(String id);
 
-    List<Medicine> getMedicinesByStorehouse(String storehouseId);
+    List<Medicine> getMedicines();
 
     Medicine getMedicineById(String id);
 

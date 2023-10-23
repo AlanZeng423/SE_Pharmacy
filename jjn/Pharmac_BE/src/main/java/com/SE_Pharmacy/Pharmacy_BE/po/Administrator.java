@@ -1,6 +1,6 @@
 package com.SE_Pharmacy.Pharmacy_BE.po;
 import javax.persistence.*;
-import java.util.Date;
+
 
 @Entity
 @Table(name = "administrator")
@@ -15,9 +15,6 @@ public class Administrator {
 
     @Column(name = "password", length = 100)
     private String password;
-
-    @Column(name = "phonenumber", length = 100)
-    private String phonenumber;
 
     public String getAno() {
         return ano;
@@ -43,11 +40,5 @@ public class Administrator {
         this.password = password;
     }
 
-    public String getPhonenumber() {
-        return phonenumber;
-    }
 
-    public void setPhonenumber(String phonenumber) {
-        this.phonenumber = phonenumber;
-    }
 }
