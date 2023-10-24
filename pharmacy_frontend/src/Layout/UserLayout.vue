@@ -1,6 +1,6 @@
 <template>
   <div id="UserLayout">
-    <a-layout style="height: 400px">
+    <a-layout style="height: 100vh">
       <a-layout-header class="header">
         <GlobalHeader />
       </a-layout-header>
