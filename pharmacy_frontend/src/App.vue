@@ -37,22 +37,21 @@ nav a.router-link-exact-active {
     <template v-if="route.path.startsWith('/doctor')">
       <router-view />
     </template>
-    <template v-if="route.path.startsWith('/admin')">
-      <router-view />
-    </template>
-    <template v-if="route.path.startsWith('/login')">
-      <router-view />
-    </template>
-    <template v-if="route.path == '/'">
-      <LoginLayout />
-    </template>
+    <template v-if="route.path.startsWith('/admin')"> <router-view /></template>
+    <template v-if="route.path.startsWith('/login')"> <router-view /></template>
+    <template v-if="route.path.startsWith('/register')">
+      <router-view
+    /></template>
+    <template v-if="route.path == '/home'"><LoginLayout /> </template>
+    <template v-if="route.path == '/'"><LoginLayout /> </template>
+    <template v-if="route.path == '/about'"><LoginLayout /> </template>
   </div>
 </template>
 
 <script setup lang="ts">
 import { onMounted } from "vue";
 import { useRoute } from "vue-router";
-import LoginLayout from "@/Layout/LoginLayout.vue";
+import LoginLayout from "./Layout/LoginLayout.vue";
 
 const route = useRoute();
 /**
@@ -70,5 +69,10 @@ onMounted(() => {
 
 <style>
 #app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* text-align: center; */
+  color: rgb(0, 0, 0);
 }
 </style>

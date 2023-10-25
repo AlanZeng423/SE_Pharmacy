@@ -3,13 +3,13 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    name: "home",
+    name: "HomeView",
     component: () => import("../views/Home.vue"),
   },
   {
-    path: "/about",
-    name: "about",
-    component: () => import("../views/AboutView.vue"),
+    path: "/home",
+    name: "Home",
+    component: () => import("../views/Home.vue"),
   },
   //login
   {
@@ -66,9 +66,9 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("../views/Admin/AdminPharmacy.vue"),
       },
       {
-        path: "/adminInfo",
-        name: "AdminInfo",
-        component: () => import("../views/Admin/AdminInfo.vue"),
+        path: "/administer",
+        name: "Administer",
+        component: () => import("../views/Admin/Administer.vue"),
       },
     ],
   },
