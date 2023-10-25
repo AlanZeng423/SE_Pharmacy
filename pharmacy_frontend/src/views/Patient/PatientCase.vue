@@ -2,7 +2,7 @@
   <div id="PatientCase">
     <h1>No.{{ caseId }}病历详情：</h1>
     <a-space direction="vertical" size="large" fill>
-      <a-descriptions :data="data" :column="{ xs: 5, md: 3, lg: 2 }">
+      <a-descriptions :data="data" :column="{ xs: 5, md: 3, lg: 1 }">
       </a-descriptions>
     </a-space>
     <h3>药品列表</h3>
@@ -11,7 +11,6 @@
       <div>
         <a-card class="card-demo" hoverable :title="drug.name">
           <div>
-            编号:{{ drug.id }} <br />
             药物作用:{{ drug.function }}<br />
             服用禁忌:{{ drug.banned }}<br />
             服用剂量:{{ drug.dosage }}<br />
@@ -29,7 +28,7 @@ import { useRoute } from "vue-router";
 
 const route = useRoute();
 const name = ref("name");
-const drugs = ref("drugs");
+const drugs = ref([]);
 const caseId = ref(route.query.caseId);
 
 /**
@@ -56,6 +55,7 @@ const drug = ref({
   prescription: "处方药",
   picture: "1111",
 });
+
 const data = [
   {
     label: "姓名",
