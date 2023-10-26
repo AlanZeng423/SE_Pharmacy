@@ -31,17 +31,7 @@
   </div>
 </template>
 
-<script lang="ts">
-// import { defineComponent } from "vue";
-// import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
-
-// export default defineComponent({
-//   name: "HomeView",
-//   components: {
-//     HelloWorld,
-//   },
-// });
-
+<script>
 export default {
   name: "HomeView",
   // components: {
@@ -53,7 +43,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .container {
   background-color: #ffffff; /* 背景颜色 */
   border: 1px solid #ccc; /* 边框样式 */

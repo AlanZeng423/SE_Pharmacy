@@ -65,12 +65,12 @@ router.afterEach((to, from, failure) => {
 });
 
 //测试状态更新,经测试OK
-setTimeout(() => {
-  store.dispatch("user/getLoginUser", {
-    userName: "殷洪洋",
-    userRole: AccessEnum.USER,
-  });
-}, 3000);
+// setTimeout(() => {
+//   store.dispatch("user/getLoginUser", {
+//     userName: "ZJH",
+//     userRole: AccessEnum.USER,
+//   });
+// }, 3000);
 </script>
 <style scoped>
 .title-bar {

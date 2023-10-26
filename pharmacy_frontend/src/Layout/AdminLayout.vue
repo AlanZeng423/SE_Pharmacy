@@ -1,6 +1,6 @@
 <template>
   <div id="AdminLayout">
-    <a-layout style="height: 100vh">
+    <a-layout style="min-height: 100vh">
       <a-layout-header class="header">
         <GlobalHeader />
       </a-layout-header>
@@ -8,7 +8,7 @@
         <router-view />
       </a-layout-content>
       <a-layout-footer class="footer"
-        >答辩医院后台管理系统，有问题联系17839391214
+        >答辩医院后台管理系统, 有问题联系17839391214
       </a-layout-footer>
     </a-layout>
   </div>
@@ -27,7 +27,8 @@ import GlobalHeader from "@/components/GlobalHeader.vue";
 }
 
 #AdminLayout .content {
-  background: linear-gradient(to right, #555555, #444444);
+  background: #efefef;
+  /* background: linear-gradient(to right, #555555, #444444); */
   margin-bottom: 16px;
   padding: 20px;
 }

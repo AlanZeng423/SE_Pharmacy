@@ -94,7 +94,7 @@ export default {
         return;
       }
       router.push({
-        path: "/adminInfo",
+        path: "/administer",
         query: { AdminId: inputAccount },
       });
     };

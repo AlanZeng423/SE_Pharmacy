@@ -1,0 +1,50 @@
+.
+├── App.vue
+├── Layout
+│   ├── AdminLayout.vue
+│   ├── DoctorLayout.vue
+│   ├── LoginLayout.vue
+│   ├── PatientLayout.vue
+│   └── UserLayout.vue
+├── access
+│   ├── accessEnum.ts
+│   ├── checkAccess.ts
+│   └── index.ts
+├── assets
+│   ├── logo.png
+│   └── pharmacyLogo.png
+├── components
+│   ├── GlobalHeader.vue
+│   └── HelloWorld.vue
+├── main.ts
+├── router
+│   └── index.ts
+├── shims-vue.d.ts
+├── store
+│   ├── index.ts
+│   └── user.ts
+├── structure.txt
+└── views
+    ├── AboutView.vue
+    ├── Admin
+    │   ├── AdminPharmacy.vue
+    │   └── Administer.vue
+    ├── Doctor
+    │   ├── DoctorPatientCase.vue
+    │   ├── DoctorPatientList.vue
+    │   └── DoctorPrescription.vue
+    ├── Home.vue
+    ├── Login
+    │   ├── LoginAdmin.vue
+    │   ├── LoginDoctor.vue
+    │   └── LoginPatient.vue
+    ├── Patient
+    │   ├── PatientCase.vue
+    │   ├── PatientCaseList.vue
+    │   └── PatientRegistration.vue
+    └── Register
+        ├── RegisterAdmin.vue
+        ├── RegisterDoctor.vue
+        └── RegisterPatient.vue
+
+13 directories, 35 files

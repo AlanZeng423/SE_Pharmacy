@@ -69,6 +69,7 @@
 <script>
 import { IconUser } from "@arco-design/web-vue/es/icon";
 import { useRouter } from "vue-router";
+import { useStore } from "vuex";
 import { ref } from "vue";
 
 export default {
@@ -76,6 +77,7 @@ export default {
   components: { IconUser },
   setup() {
     const router = useRouter();
+    const store = useStore();
     const inputAccount = ref("");
     const inputTelNum = ref("");
     const inputPassword = ref("");
@@ -93,8 +95,12 @@ export default {
         return;
       }
       router.push({
-        path: "/adminInfo",
-        query: { AdminId: inputAccount },
+        path: "/patientCase",
+        query: { PatientId: inputAccount },
+      });
+      store.dispatch("user/getLoginUser", {
+        userName: inputAccount,
+        userRole: "patient",
       });
     };
 
