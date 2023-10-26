@@ -101,17 +101,20 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: "/patientCase",
-        name: "PatientCase",
+        name: "病历详情",
         component: () => import("../views/Patient/PatientCase.vue"),
+        meta: {
+          hideInMenu: true,
+        },
       },
       {
         path: "/patientCaseList",
-        name: "PatientCaseList",
+        name: "病历列表",
         component: () => import("../views/Patient/PatientCaseList.vue"),
       },
       {
         path: "/patientRegistration",
-        name: "PatientRegistration",
+        name: "挂号/预约",
         component: () => import("../views/Patient/PatientRegistration.vue"),
       },
     ],

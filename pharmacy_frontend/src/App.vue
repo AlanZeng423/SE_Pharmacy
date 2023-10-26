@@ -31,7 +31,7 @@ nav a.router-link-exact-active {
 
 <template>
   <div id="app">
-    <template v-if="route.path.startsWith('/user')">
+    <template v-if="route.path.startsWith('/patient')">
       <router-view />
     </template>
     <template v-if="route.path.startsWith('/doctor')">
