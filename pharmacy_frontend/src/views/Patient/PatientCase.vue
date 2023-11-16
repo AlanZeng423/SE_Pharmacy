@@ -23,6 +23,12 @@
 </template>
 
 <script setup lang="ts">
+// import { routes } from "@/router/index";
+// import { useRoute, useRouter } from "vue-router";
+// import { computed, ref, onMounted } from "vue";
+// import { useStore } from "vuex";
+// import checkAccess from "@/access/checkAccess";
+// import AccessEnum from "@/access/accessEnum";
 import { onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
 

@@ -60,9 +60,24 @@ const doMenuClick = (key: string) => {
 
 // 更新路由后同步更新菜单栏
 const selectedKeys = ref([route.path]);
+
 router.afterEach((to, from, failure) => {
   selectedKeys.value = [to.path];
 });
+
+// todo: UserControllerService.userLogoutUsingPost();
+// const logout = () => {
+//   UserControllerService.userLogoutUsingPost();
+//   router.push({ path: "/" });
+//   isLogin.value = "no";
+//   store.dispatch("user/getLoginUser", {
+//     userRole: AccessEnum.NOT_LOGIN,
+//   });
+// };
+
+const login = () => {
+  router.push({ path: "/" });
+};
 
 //测试状态更新,经测试OK
 setTimeout(() => {

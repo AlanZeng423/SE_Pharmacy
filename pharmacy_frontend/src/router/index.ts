@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
-const routes: Array<RouteRecordRaw> = [
+export const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "home",
@@ -68,7 +68,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: "/adminInfo",
         name: "AdminInfo",
-        component: () => import("../views/Admin/AdminInfo.vue"),
+        component: () => import("../views/Admin/Administer.vue"),
       },
     ],
   },
