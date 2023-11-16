@@ -27,7 +27,7 @@ import GlobalHeader from "@/components/GlobalHeader.vue";
 }
 
 #AdminLayout .content {
-  background: linear-gradient(to right, #555555, #444444);
+  background: linear-gradient(to right, #efefef, #ffffff);
   margin-bottom: 16px;
   padding: 20px;
 }

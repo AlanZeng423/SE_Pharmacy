@@ -5,7 +5,7 @@
         <a-input v-model="searchParams.id" placeholder="请输入病历编号" />
       </a-form-item>
       <a-form-item field="title" label="医生姓名" style="min-width: 280px">
-        <a-input v-model="searchParams.title" placeholder="请输入医生姓名" />
+        <a-input v-model="searchParams.p_id" placeholder="请输入医生姓名" />
       </a-form-item>
       <a-form-item>
         <a-button type="primary" @click="doSubmit">查询</a-button>
@@ -24,15 +24,35 @@
       }"
       @page-change="onPageChange"
     >
+      <template #GetDrug="{ record }">
+        <a-space wrap>
+          <a-tag v-if="record.GetDrug == 1">
+            <a-tag color="arcoblue">
+              <template #icon>
+                <icon-check-circle-fill />
+              </template>
+              已取药
+            </a-tag>
+          </a-tag>
+          <a-tag v-if="record.GetDrug == 1">
+            <a-tag color="red">未取药</a-tag>
+          </a-tag>
+        </a-space>
+      </template>
+      <template #createTime="{ record }">
+        {{ moment(record.createTime).format("YYYY-MM-DD") }}
+      </template>
+      <!--      <template #optional="{ record }">-->
+      <!--        <a-button type="primary" @click="viewCase(record)">查看病历</a-button>-->
+      <!--      </template>-->
     </a-table>
-  </div>
-  <div>
-    <h3 @click="viewCase">看病历</h3>
   </div>
 </template>
 <script setup lang="ts">
 import { onMounted, ref, watchEffect } from "vue";
 import { useRouter } from "vue-router";
+
+import moment from "moment";
 
 const router = useRouter();
 const tableRef = ref();
@@ -42,12 +62,11 @@ const caseId = ref(10001);
 /**
  * 控制分页显示大小 —— 一页有几个元素 & 当前是第几页
  */
-// todo: 定义为查询也样式 如ref<QuestionQueryRequest>
-// const searchParams = ref<PatientQueryRequest>({
+// todo: 定义为查询也样式 如ref<PatientQueryRequest>
+// const searchParams = ref<CaseQueryRequest>({
 const searchParams = ref({
   id: undefined,
-  title: "",
-  tags: [],
+  p_id: undefined,
   pageSize: 8,
   current: 1,
 });
@@ -92,10 +111,14 @@ const doSubmit = () => {
   loadData();
 };
 
-const viewCase = () => {
-  router.push({ path: "/patientCase", query: { caseId: caseId.value } });
-};
-
+// // todo: 使用Openapi
+// const viewCase = (
+// case:
+// Case
+// ) =>
+// {
+//   router.push({path: "/patientCase", query: {caseId: caseId.value}});
+// }
 //todo 根据数据库来改变
 const columns = [
   {

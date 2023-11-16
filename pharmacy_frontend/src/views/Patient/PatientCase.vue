@@ -31,25 +31,47 @@
 // import AccessEnum from "@/access/accessEnum";
 import { onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
+import message from "@arco-design/web-vue/es/message";
 
 const route = useRoute();
 const name = ref("name");
+const sex = ref();
+const doctor = ref();
+const advice = ref();
 const drugs = ref([]);
 const caseId = ref(route.query.caseId);
-
+const total = ref(0);
 /**
  * 根据病历Id获取病历详情 name、sex、advice
  */
-
-/**
- * 通过dId找医生名字
- */
+// const loadData = async () => {
+//   //todo:获取指定病历的信息
+//   const res = CasesController.getCase(caseId.value);
+//   if (res.code === 0) {
+//     name.value = res.data.name;
+//     sex.value = res.data.sex;
+//     doctor.value = res.data.doctor;
+//     advice.value = res.data.advice;
+//   }
+// };
 
 /**
  *  获取该病历中的药品清单 病例编号caseId
  */
-// todo
-// onMounted(() => {});
+// const getDrugs = async () => {
+//   //todo: 获取指定病历Id的药物
+//   const res = await DrugController.getdrugs(caseId.value);
+//   if (res.code === 0) {
+//     drugs.value = res.data.records;
+//     total.value = res.data.total;
+//   } else {
+//     message.error("加载失败：" + res.message);
+//   }
+// };
+// onMounted(() => {
+//   loadData();
+//   getDrugs();
+// });
 // 暂时代替使用 改成描述列表，和上面一样的样式
 const drug = ref({
   id: "No.10001",
@@ -69,15 +91,15 @@ const data = [
   },
   {
     label: "性别",
-    value: "女",
+    value: sex.value,
   },
   {
     label: "主治医生",
-    value: "李泰然",
+    value: doctor.value,
   },
   {
     label: "医嘱",
-    value: "注意保暖、多喝热水、少熬夜",
+    value: advice.value,
   },
 ];
 </script>

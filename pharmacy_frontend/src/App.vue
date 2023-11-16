@@ -46,6 +46,9 @@ nav a.router-link-exact-active {
     <template v-if="route.path == '/'">
       <LoginLayout />
     </template>
+    <template v-if="route.path == '/home'">
+      <LoginLayout />
+    </template>
   </div>
 </template>
 

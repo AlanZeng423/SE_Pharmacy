@@ -65,16 +65,22 @@ router.afterEach((to, from, failure) => {
   selectedKeys.value = [to.path];
 });
 
-// todo: UserControllerService.userLogoutUsingPost();
-// const logout = () => {
-//   UserControllerService.userLogoutUsingPost();
-//   router.push({ path: "/" });
-//   isLogin.value = "no";
-//   store.dispatch("user/getLoginUser", {
-//     userRole: AccessEnum.NOT_LOGIN,
-//   });
-// };
-
+// todo: Logout();
+const logout = () => {
+  if (store.state.user.loginUser.userRole == AccessEnum.USER) {
+    // UserController.logout()
+  }
+  if (store.state.user.loginUser.userRole == AccessEnum.ADMIN) {
+    // AdminController.logout()
+  }
+  if (store.state.user.loginUser.userRole == AccessEnum.DOCTOR) {
+    // DoctorController.logout()
+  }
+  router.push({ path: "/" });
+  store.dispatch("user/getLoginUser", {
+    userRole: AccessEnum.NOT_LOGIN,
+  });
+};
 const login = () => {
   router.push({ path: "/" });
 };

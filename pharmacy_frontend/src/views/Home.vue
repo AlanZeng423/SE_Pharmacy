@@ -4,10 +4,14 @@
   </div>
   <br />
   <br />
-  <div><a-space style="font-size: 35px">欢迎登陆医院药房系统</a-space></div>
+  <div>
+    <a-space style="font-size: 35px">欢迎登陆医院药房系统</a-space>
+  </div>
   <br />
   <br />
-  <div><a-space style="font-size: 20px">请选择您的身份</a-space></div>
+  <div>
+    <a-space style="font-size: 20px">请选择您的身份</a-space>
+  </div>
   <br />
   <br />
   <div class="container">
