@@ -1,0 +1,13 @@
+# macOS specific files
+.DS_Store
+
+# IDEA
+.idea/
+
+.vscode/
+
+# Node modules
+pharmacy_frontend/node_modules/
+
+# ...其他规则...
+*.iml
