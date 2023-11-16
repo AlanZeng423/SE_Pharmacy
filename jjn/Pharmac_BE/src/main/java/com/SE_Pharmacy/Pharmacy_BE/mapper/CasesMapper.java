@@ -5,6 +5,7 @@ import com.SE_Pharmacy.Pharmacy_BE.po.Cases;
 
 import java.util.List;
 
+@Mapper
 public interface CasesMapper {
     @Insert("INSERT INTO Cases (c_id,p_id,d_id,date,medicine_id,gender,advice) " +
             "VALUES (#{c_id}, #{p_id}, #{d_id},#{date},#{medicine_id},#{gender},#{advice})")
@@ -20,5 +21,5 @@ public interface CasesMapper {
     void deleteMedicines(@Param("c_id") Integer c_id);
 
     @Select("SELECT * FROM Cases WHERE c_id = #{c_id}")
-    List<Cases> getMedicine(@Param("c_id") Integer c_id);
+    List<Cases> getMedicine(@Param("c_id") Integer c_id);//c_id medicine_id
 }

@@ -7,8 +7,8 @@ import javax.persistence.*;
 public class Administrator {
 
     @Id
-    @Column(name = "ano", length = 10)
-    private String ano;
+    @Column(name = "ad_id", length = 10)
+    private String ad_id;
 
     @Column(name = "aname", length = 100)
     private String aname;
@@ -16,12 +16,12 @@ public class Administrator {
     @Column(name = "password", length = 100)
     private String password;
 
-    public String getAno() {
-        return ano;
+    public String getAd_id() {
+        return ad_id;
     }
 
-    public void setAno(String ano) {
-        this.ano = ano;
+    public void setAd_id(String ano) {
+        this.ad_id = ad_id;
     }
 
     public String getAname() {

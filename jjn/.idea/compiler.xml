@@ -12,5 +12,8 @@
         <module name="Pharmac_BE" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="jjn" target="" />
+    </bytecodeTargetLevel>
   </component>
 </project>

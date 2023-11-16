@@ -4,13 +4,8 @@ import org.springframework.stereotype.Service;
 import com.SE_Pharmacy.Pharmacy_BE.po.Drug;
 import com.SE_Pharmacy.Pharmacy_BE.service.DrugService;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class DrugServiceImpl implements DrugService {
