@@ -216,7 +216,7 @@ const form = reactive({
   time: "",
   isRead: false,
 });
-const handleSubmit = (data) => {
+const handleSubmit = (data: any) => {
   console.log(data);
   if (
     form.name == "" ||
