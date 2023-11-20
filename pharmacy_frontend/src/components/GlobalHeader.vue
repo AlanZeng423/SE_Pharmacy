@@ -27,6 +27,7 @@
     </a-col>
   </a-row>
 </template>
+
 <script setup lang="ts">
 import { useRoute, useRouter } from "vue-router";
 import { computed, ref, onMounted } from "vue";
@@ -89,6 +90,7 @@ const login = () => {
 setTimeout(() => {
   store.dispatch("user/getLoginUser", {
     userName: "殷洪洋",
+    userId: "123",
     userRole: AccessEnum.USER,
   });
 }, 3000);

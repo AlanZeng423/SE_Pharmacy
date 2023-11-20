@@ -5,7 +5,10 @@
         <a-input v-model="searchParams.id" placeholder="请输入病历编号" />
       </a-form-item>
       <a-form-item field="title" label="医生姓名" style="min-width: 280px">
-        <a-input v-model="searchParams.p_id" placeholder="请输入医生姓名" />
+        <a-input
+          v-model="searchParams.doctorName"
+          placeholder="请输入医生姓名"
+        />
       </a-form-item>
       <a-form-item>
         <a-button type="primary" @click="doSubmit">查询</a-button>
@@ -51,9 +54,11 @@
 <script setup lang="ts">
 import { onMounted, ref, watchEffect } from "vue";
 import { useRouter } from "vue-router";
-
+import { useStore } from "vuex";
 import moment from "moment";
+import message from "@arco-design/web-vue/es/message";
 
+const store = useStore();
 const router = useRouter();
 const tableRef = ref();
 const dataList = ref([]);
@@ -66,7 +71,8 @@ const caseId = ref(10001);
 // const searchParams = ref<CaseQueryRequest>({
 const searchParams = ref({
   id: undefined,
-  p_id: undefined,
+  userId: store.state.user?.loginUser?.userId,
+  doctorName: "",
   pageSize: 8,
   current: 1,
 });
@@ -75,8 +81,16 @@ const searchParams = ref({
  * 加载数据
  */
 const loadData = async () => {
-  // todo 应用分页获取病历列表
-  // const res = await
+  // todo 应用分页获取本人的病历列表
+  // const res = await CaseController.getCaseByUser(
+  //   searchParams.value
+  // );
+  // if (res.code === 200) {
+  //   dataList.value = res.data.records;
+  //   total.value = res.data.total;
+  // } else {
+  //   message.error("加载失败：" + res.message);
+  // }
 };
 /**
  * 当页面初始化的时候，执行loadData 加载数据
@@ -111,15 +125,10 @@ const doSubmit = () => {
   loadData();
 };
 
-// // todo: 使用Openapi
-// const viewCase = (
-// case:
-// Case
-// ) =>
-// {
+// // todo: 使用Openapi 包括启动上面的插槽
+// const viewCase = ( case: Case ) =>{
 //   router.push({path: "/patientCase", query: {caseId: caseId.value}});
 // }
-//todo 根据数据库来改变
 const columns = [
   {
     title: "病历编号",

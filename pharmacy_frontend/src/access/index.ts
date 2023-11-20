@@ -38,7 +38,7 @@ router.beforeEach(async (to, from, next) => {
     // 如果已经登陆了，但是权限不足，也跳转到未登录页面
     if (!checkAccess(loginUser, needAccess)) {
       next("/");
-      //todo:弹一个权限不足
+      alert("权限不足，请联系管理员或尝试其他操作。"); // 这里使用了 alert 函数来弹出一个警告框
       return;
     }
   }

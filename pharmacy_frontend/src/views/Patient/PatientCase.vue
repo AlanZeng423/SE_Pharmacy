@@ -46,7 +46,7 @@ const total = ref(0);
  */
 // const loadData = async () => {
 //   //todo:获取指定病历的信息
-//   const res = CasesController.getCase(caseId.value);
+//   const res = CasesController.getCaseById(caseId.value);
 //   if (res.code === 0) {
 //     name.value = res.data.name;
 //     sex.value = res.data.sex;
