@@ -15,7 +15,7 @@ public class AdministratorController {
     private AdministratorService administratorService;
 
     @RequestMapping("/getAdministrator")
-    public Administrator getAdministratorById(String ano){
+    public Administrator getAdministratorById(int ano){
         return administratorService.getAdministratorById(ano);
     }
 
@@ -30,7 +30,12 @@ public class AdministratorController {
     }
 
     @RequestMapping("/deleteAdministrator")
-    public void deleteAdministrator(String ano){
+    public void deleteAdministrator(int ano){
         administratorService.deleteAdministrator(ano);
+    }
+
+    @RequestMapping("/getLoginUserUsingGet")
+    public Integer  getLoginUserUsingGet(int ad_id){
+        return administratorService.getLoginUserUsingGet(ad_id);
     }
 }

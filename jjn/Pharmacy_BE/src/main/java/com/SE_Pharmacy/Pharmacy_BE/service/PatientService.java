@@ -13,4 +13,6 @@ public interface PatientService {
     String getNameById(@Param("p_id") int id);
 
     String getGenderById(@Param("p_id") int p_id);
+
+    Integer getLoginUserUsingGet(int p_id);
 }

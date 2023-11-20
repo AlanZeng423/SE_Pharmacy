@@ -13,6 +13,8 @@ public class Doctor {
 
     private String pw;
 
+    private int role;
+
     public int getD_id() {
         return d_id;
     }
@@ -35,5 +37,13 @@ public class Doctor {
 
     public void setPw(String pw) {
         this.pw = pw;
+    }
+
+    public int getRole() {
+        return role;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
     }
 }

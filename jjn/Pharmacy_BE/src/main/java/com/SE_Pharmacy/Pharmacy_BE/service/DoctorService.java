@@ -11,4 +11,6 @@ public interface DoctorService {
     void deleteDoctor(int id);
 
     String getNameById(int id);
+
+    Integer getLoginUserUsingGet(int d_id);
 }

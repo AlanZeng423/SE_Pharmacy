@@ -19,4 +19,7 @@ public interface DoctorMapper {
     //获取医生名字
     @Select("SELECT * FROM doctor WHERE d_id = #{d_id}")
     String getNameById(@Param("d_id") int id);
+
+    @Select("SELECT role FROM doctor WHERE d_id =#{d_id}")
+    Integer getLoginUserUsingGet(@Param("d_id") int d_id);
 }

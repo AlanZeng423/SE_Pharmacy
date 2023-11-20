@@ -37,4 +37,9 @@ public class PatientServiceImpl implements PatientService {
         return patientMapper.getGenderById(p_id);
     }
 
+    @Override
+    public Integer getLoginUserUsingGet(int p_id) {
+        return patientMapper.getLoginUserUsingGet(p_id);
+    }
+
 }

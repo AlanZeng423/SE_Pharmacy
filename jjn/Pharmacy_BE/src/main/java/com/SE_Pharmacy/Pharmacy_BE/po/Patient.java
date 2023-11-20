@@ -10,6 +10,8 @@ public class Patient {
 
     private String gender;
 
+    private int role;
+
     public int getPId() {
         return pId;
     }
@@ -40,5 +42,13 @@ public class Patient {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public int getRole() {
+        return role;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
     }
 }

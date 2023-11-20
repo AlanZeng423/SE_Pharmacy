@@ -28,14 +28,18 @@ public class DoctorController {
 
     // 删除医生
     @RequestMapping("/deleteDoctor")
-    public void deleteDoctor(String id) {
+    public void deleteDoctor(int id) {
         doctorService.deleteDoctor(id);
     }
 
     // 获取医生姓名
     @RequestMapping("/getDoctorName")
-    public String getDoctorNameById(String id) {
+    public String getDoctorNameById(int id) {
         return doctorService.getNameById(id);
     }
 
+    @RequestMapping("/getLoginUserUsingGet")
+    public Integer  getLoginUserUsingGet(int d_id){
+        return doctorService.getLoginUserUsingGet(d_id);
+    }
 }

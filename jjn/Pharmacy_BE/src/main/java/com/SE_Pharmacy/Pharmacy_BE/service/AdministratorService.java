@@ -1,13 +1,15 @@
 package com.SE_Pharmacy.Pharmacy_BE.service;
 import com.SE_Pharmacy.Pharmacy_BE.po.Administrator;
+import org.apache.ibatis.annotations.Param;
 
 
 public interface AdministratorService {
-    Administrator getAdministratorById(String ano);
+    Administrator getAdministratorById(int ano);
     void insertAdministrator(Administrator administrator);
 
     void updateAdministrator(Administrator administrator);
 
-    void deleteAdministrator(String ano);
+    void deleteAdministrator(int ano);
 
+    Integer getLoginUserUsingGet(int ad_id);
 }

@@ -31,4 +31,9 @@ public class DoctorServiceImpl implements DoctorService {
     public String getNameById(int id) {
         return doctorMapper.getNameById(id);
     }
+
+    @Override
+    public Integer getLoginUserUsingGet(int d_id) {
+        return doctorMapper.getLoginUserUsingGet(d_id);
+    }
 }

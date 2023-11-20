@@ -38,4 +38,9 @@ public class PatientController {
     public String getNameById(@Param("p_id") int id){
         return patientService.getNameById(id);
     }
+
+    @RequestMapping("/getLoginUserUsingGet")
+    public Integer  getLoginUserUsingGet(int p_id){
+        return patientService.getLoginUserUsingGet(p_id);
+    }
 }

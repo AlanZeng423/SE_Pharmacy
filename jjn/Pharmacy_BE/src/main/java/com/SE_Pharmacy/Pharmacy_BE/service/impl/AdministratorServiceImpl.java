@@ -12,7 +12,7 @@ public class AdministratorServiceImpl implements AdministratorService {
     private AdministratorMapper administratorMapper;
 
     @Override
-    public Administrator getAdministratorById(String ano){
+    public Administrator getAdministratorById(int ano){
         return administratorMapper.getAdministratorById(ano);
     }
 
@@ -27,7 +27,12 @@ public class AdministratorServiceImpl implements AdministratorService {
     }
 
     @Override
-    public void deleteAdministrator(String ano) {
+    public void deleteAdministrator(int ano) {
         administratorMapper.deleteAdministrator(ano);
+    }
+
+    @Override
+    public Integer getLoginUserUsingGet(int ad_id) {
+        return administratorMapper.getLoginUserUsingGet(ad_id);
     }
 }

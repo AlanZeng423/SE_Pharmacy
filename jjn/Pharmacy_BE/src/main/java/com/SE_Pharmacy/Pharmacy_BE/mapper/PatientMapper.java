@@ -22,4 +22,7 @@ public interface PatientMapper {
     //获取病人性别
     @Select("SELECT gender FROM patient WHERE p_id = #{p_id}")
     String getGenderById(@Param("p_id") int p_id);
+
+    @Select("SELECT role FROM patient WHERE p_id =#{p_id}")
+    Integer getLoginUserUsingGet(@Param("p_id") int p_id);
 }
