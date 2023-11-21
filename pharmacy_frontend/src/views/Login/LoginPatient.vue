@@ -55,7 +55,7 @@
           @click="login(inputAccount)"
           >登陆
         </a-button>
-        <a-button :style="{ width: '100px' }" type="outline" @click="toRegister"
+        <a-button :style="{ width: '100px' }" type="outline"
           ><router-link to="/registerPatient">注册</router-link>
         </a-button>
         <a-button :style="{ width: '100px' }" @click="refreshPage"
@@ -93,8 +93,8 @@ export default {
         return;
       }
       router.push({
-        path: "/adminInfo",
-        query: { AdminId: inputAccount },
+        path: "/patientRegistration",
+        query: { PatientId: inputAccount },
       });
     };
 

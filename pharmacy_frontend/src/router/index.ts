@@ -61,13 +61,8 @@ export const routes: Array<RouteRecordRaw> = [
     component: () => import("../Layout/AdminLayout.vue"),
     children: [
       {
-        path: "/adminPharmacy",
-        name: "AdminPharmacy",
-        component: () => import("../views/Admin/AdminPharmacy.vue"),
-      },
-      {
         path: "/adminInfo",
-        name: "AdminInfo",
+        name: "管理员",
         component: () => import("../views/Admin/Administer.vue"),
       },
     ],

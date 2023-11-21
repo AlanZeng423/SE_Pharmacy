@@ -301,6 +301,7 @@ const form = reactive({
 
 const visible = ref(false);
 const handleClick = async (data: any) => {
+  // eslint-disable-next-line no-undef
   const res = await PatientController.getUserInfo(
     store.state.user?.loginUser?.userId
   );
@@ -335,6 +336,7 @@ const handleSubmit = async (data: any) => {
 
 const SubmitToBE = async (data: any) => {
   // todo 提交预约信息
+  // eslint-disable-next-line no-undef
   const res = await AppointmentController.newAppointment(
     form.doctorId,
     store.state.user?.loginUser?.userId,

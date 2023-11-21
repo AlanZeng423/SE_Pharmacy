@@ -60,7 +60,7 @@
           />
         </a-form-item>
         <a-form-item field="medicineAmount" label="药品数量">
-          <a-input v-model="form.medicneAmount" placeholder="请输入药品数量" />
+          <a-input v-model="form.medicineAmount" placeholder="请输入药品数量" />
         </a-form-item>
         <a-form-item field="medicineExpired" label="药品有效期">
           <a-date-picker style="width: 200px" />
@@ -119,6 +119,7 @@
 import { IconUser } from "@arco-design/web-vue/es/icon";
 import { useRoute } from "vue-router";
 import { onMounted, ref, watch } from "vue";
+import message from "@arco-design/web-vue/es/message";
 
 export default {
   name: "AdminInfo",
@@ -162,6 +163,7 @@ export default {
         },
       },
     ];
+
     const data = ref([]);
     const visibleofAdd = ref(false);
     const visibleofEdit = ref(false);
@@ -186,22 +188,34 @@ export default {
     const handleEdit = () => {
       visibleofEdit.value = true;
     };
-    const form = ref({
-      medicineName: "",
-      medicineAmount: "",
-      medicineExpire: "",
-      medicinePrice: "",
-      medicineType: "",
-      medicineDesc: "",
-      medicinePic: "",
-      medicineId: "",
-    });
+    const form = ref(
+      // 用于添加药品
+      {
+        medicineName: "",
+        medicineAmount: "",
+        medicineExpire: "",
+        medicinePrice: "",
+        medicineType: "",
+        medicineDesc: "",
+        medicinePic: "",
+        medicineId: "",
+      }
+    );
 
     const options = ref(["奥利司他胶囊", "杰士邦", "杜蕾斯"]);
 
-    const handleSubmit = (data) => {
-      data.value = data;
+    const handleSubmit = async () => {
       // TODO: 把数据提交到后端和数据库
+      // eslint-disable-next-line no-undef
+      await AdminController.AddMedicine(form).then((response) => {
+        if (response.code === 200) {
+          // alert("添加成功");
+          message.success("添加成功");
+        } else {
+          // alert("添加失败");
+          message.error("添加失败");
+        }
+      });
     };
 
     watch(selectedKeys, (newSelectedKeys) => {

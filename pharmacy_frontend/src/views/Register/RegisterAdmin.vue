@@ -1,8 +1,17 @@
-import { registerRuntimeCompiler } from 'vue';
 <template>
+  <a-space direction="vertical">
+    <a-breadcrumb :routes="routes" />
+    <a-breadcrumb :routes="routes">
+      <template #item-render="{ route, paths }">
+        <a-link :href="paths.join('/')">
+          {{ route.label }}
+        </a-link>
+      </template>
+    </a-breadcrumb>
+  </a-space>
   <div class="input-container">
     <a-space direction="vertical" size="large">
-      <a-space style="font-size: 24px">管理员注册</a-space>
+      <a-space style="font-size: 24px">医院管理系统</a-space>
       <a-avatar :style="{ backgroundColor: '#3370ff' }">
         <IconUser />
       </a-avatar>
@@ -32,13 +41,6 @@ import { registerRuntimeCompiler } from 'vue';
         allow-clear
       />
 
-      <a-input-password
-        v-model="confirmPassword"
-        :style="{ width: '320px' }"
-        placeholder="再次输入密码以确认"
-        allow-clear
-      />
-
       <a-space
         :style="{
           width: '320px',
@@ -47,10 +49,13 @@ import { registerRuntimeCompiler } from 'vue';
           margin: '0 auto',
         }"
       >
-        <a-button :style="{ width: '150px' }" type="primary" @click="register"
+        <a-button
+          :style="{ width: '100px' }"
+          type="primary"
+          @click="login(inputAccount)"
           >注册
         </a-button>
-        <a-button :style="{ width: '150px' }" @click="refreshPage"
+        <a-button :style="{ width: '100px' }" @click="refreshPage"
           >取消
         </a-button>
       </a-space>
@@ -60,67 +65,38 @@ import { registerRuntimeCompiler } from 'vue';
 
 <script>
 import { IconUser } from "@arco-design/web-vue/es/icon";
-import { useRouter } from "vue-router";
+import { useRouter, useRoute } from "vue-router";
 import { ref } from "vue";
 
 export default {
-  name: "RegisterAdmin",
+  name: "LoginAdmin",
   components: { IconUser },
   setup() {
-    //     const router = useRouter();
+    const router = useRouter();
+    const route = useRoute();
     const inputAccount = ref("");
     const inputTelNum = ref("");
     const inputPassword = ref("");
-    const confirmPassword = ref("");
-    const register = () => {
-      if (
-        inputAccount.value === "" ||
-        inputTelNum.value === "" ||
-        inputPassword.value === ""
-      ) {
-        alert("请输入完整信息");
+    const register = (inputAccount) => {
+      if (inputAccount === "") {
+        alert("请输入账号");
         return;
       }
-
-      if (inputPassword.value !== confirmPassword.value) {
-        alert("两次输入的密码不一致");
+      if (inputTelNum.value === "") {
+        alert("请输入手机号");
+        return;
+      }
+      if (inputPassword.value === "") {
+        alert("请输入密码");
         return;
       }
     };
-
-    //   const data = {
-    //     account: inputAccount.value,
-    //     telNum: inputTelNum.value,
-    //     password: inputPassword.value,
-    //   };
-
-    //   fetch("/api/registerAdmin", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(data),
-    //   })
-    //     .then((res) => res.json())
-    //     .then(
-    //       (result) => {
-
-    //         if (result.code === 200) {
-    //           alert("注册成功");
-    //           router.push("/login");
-    //         } else {
-    //           alert("注册失败");
-    //         }
-    //       }
-    //     )
-    //     .catch((error) => {
-    //       alert("请求失败");
-    //     });
 
     return {
       inputAccount,
       inputTelNum,
       inputPassword,
+      router,
       register,
     };
   },

@@ -98,12 +98,18 @@ export default {
         query: { AdminId: inputAccount },
       });
     };
+    const toRegister = () => {
+      router.push({
+        path: "/registerAdmin",
+      });
+    };
 
     return {
       inputAccount,
       inputTelNum,
       inputPassword,
-      route,
+      toRegister,
+      router,
       login,
     };
   },
